@@ -7,7 +7,7 @@ object CLI {
     var jobTitle: String = ""
 
     do {
-      printf("Job title: ")
+      print("Job title: ")
       jobTitle = readLine()
       if (jobTitle.isEmpty) println("Job title required!")
     } while (jobTitle.isEmpty || jobTitle.matches(".*\\d+.*"))
@@ -19,7 +19,7 @@ object CLI {
     var desiredSalary: String = ""
 
     do {
-      printf("Desired salary: ")
+      print("Desired salary: ")
       desiredSalary = readLine()
       if (desiredSalary.isEmpty) println("Desired salary required!")
     } while (desiredSalary.isEmpty)
@@ -31,7 +31,7 @@ object CLI {
     var location: String = ""
 
     do {
-      printf("Location: ")
+      print("Location: ")
       location = readLine()
       if (location.isEmpty) println("Location required!")
     } while (location.isEmpty)
@@ -43,7 +43,7 @@ object CLI {
     var jobType: Int = 0
 
     println("1. Part-time\n2. Full-time")
-    printf("Choose number representing the job type (Optional - press enter to skip): ")
+    print("Choose number representing the job type (Optional - press enter to skip): ")
     jobType = readInt()
 
     jobType match {
@@ -57,7 +57,7 @@ object CLI {
     var expLevel: Int = 0
 
     println("1. Entry level\n2. Mid level\n3. Senior level")
-    printf("Choose the number representing the experience level (Optional - press enter to skip): ")
+    print("Choose the number representing the experience level (Optional - press enter to skip): ")
     expLevel = readInt()
 
     expLevel match {
@@ -72,7 +72,7 @@ object CLI {
     var datePosted: String = ""
 
     println("1. Last 24 hours\n2. Last 3 days\n3. Last 7 days\n4. Last 14 days")
-    printf("Date posted (Optional - press enter to skip): ")
+    print("Date posted (Optional - press enter to skip): ")
     datePosted = readLine()
 
     datePosted match {
