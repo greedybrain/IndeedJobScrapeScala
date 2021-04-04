@@ -22,13 +22,11 @@ object JobScraper {
   }
 
   def getJobCardsForEachPage: ListBuffer[Element] = {
-    var count: Int = 0
     var dataDocument: Document = getDataDocument(URL)
     jobCardsFrom(dataDocument)
     if (containsPagination(dataDocument)) {
       val paginationList: Elements = dataDocument.select("div.pagination ul.pagination-list li a")
       paginationList.forEach(pageItem => {
-        count += 1
         val completeLink = s"https://www.indeed.com/${pageItem.attr("href")}"
         dataDocument = getDataDocument(completeLink)
         jobCardsFrom(dataDocument)
