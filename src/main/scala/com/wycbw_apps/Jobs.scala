@@ -1,6 +1,8 @@
 package com.wycbw_apps
 
+import org.jsoup.nodes.Document
 import org.jsoup.select.Elements
+
 import scala.collection.mutable.ListBuffer
 
 // responsibility = curate all jobs from scraped data, make objects out of them, and list them
@@ -8,7 +10,7 @@ object Jobs {
 
   private def getJobListings: ListBuffer[Job]  = {
     val listing: ListBuffer[Job] = ListBuffer()
-    JobScraper.getJobCards.forEach(card => {
+    JobScraper.getJobCardsForEachPage.foreach(card => {
       val title: String = card.select("h2.title").text()
       val company: String = card.select("div.sjcl span.company").text()
       val rating: String = card.select("div.sjcl span.ratingsDisplay a span.ratingsContent").text()

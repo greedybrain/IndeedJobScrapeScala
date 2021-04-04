@@ -39,6 +39,24 @@ object CLI {
     location
   }
 
+  def getRadius: String = {
+    var radius: Int = 0
+
+    println("1. within 5 miles\n2. within 10 miles\n3. within 15 miles\n4. within 25 miles\n5. within 50 miles\n6. within 100 miles")
+    print("Choose number representing your preferred radius (Optional - press enter to skip): ")
+    radius = readInt()
+
+    radius match {
+      case 1 => "5"
+      case 2 => "10"
+      case 3 => "15"
+      case 4 => "25"
+      case 5 => "50"
+      case 6 => "100"
+      case _ => ""
+    }
+  }
+
   def getJobType: String = {
     var jobType: Int = 0
 
